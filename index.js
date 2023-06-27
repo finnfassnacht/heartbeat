@@ -8,7 +8,7 @@ const express = require("express");
 const app = express();
 app.use(express.static("www"));
 app.use(express.json());
-PORT = 3000;
+PORT = 8080;
 app.post("/cords", (req,res) => {
     async function re_addrs() {
         var client_data = (req.body);
