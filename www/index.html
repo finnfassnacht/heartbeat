@@ -4,27 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="med.png">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="icon" type="image/x-icon" href="appleicon.png">
+    <link rel="apple-touch-icon" href="appleicon.png">
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
     crossorigin=""/>
 
     <title>Heartbeat</title>
 </head>
+<style>
+    table, th, td {
+      border:3px solid black; font-size: 25px; text-align: center;
+    }
+    p{
+        font-size: 25px;
+        text-align: center;
+        font-weight: bold;
+    }
+</style>  
 <body style="margin: 0;">
     <div style="background-color: red; height: 40px; padding: 20px;">
-        <img style="float: left; position: relative; top: -15px;" src="med.png" height="70px">
-        <h3 style="font-size: 43px; position: relative; top: -45px; left: 10px; ">Heartbeat</h3>
+        <img style="float: left; position: relative; top: -15px;" src="appleicon.png" height="70px">
+        <p style="font-size: 50px; position: relative; top: -63px; left: 10px; font-weight: bold;">Heartbeat</p>
     </div>
     <center>
-        <div style="padding: 10px; position: relative; top: 15px;">
-            <div id="map" style="width: 95%; height: 260px; border-radius: 5px;"></div>
+
+        <div style="padding: 8px;" >     
+            <div id="map" style="width: 95%; height: 260px; border-radius: 5px; background-color: gray;">
         </div>
-        <div style="background-color: rgb(195, 195, 195); color:black; border-radius: 5px; width: 80%; font-size: 30px; position: relative; top: -10px;">
+        <div style="background-color: rgb(55, 101, 170); color:rgb(255, 255, 255); border-radius: 5px; width: 95%; font-size: 30px; font-weight: bold; position: relative; bottom:5px;">
             <p id="locating">locating...</p>
-            <p id="street"></p>
-            <p id="town"></p>
+            <p id="street" style="position: relative; top: 10px;"></p>
+            <p id="town" style="position: relative; top: -10px;"></p>
         </div>
+        <table style="width:95%; position: relative; bottom: 20px;">
+            <tr>
+            <th>EMS</th>
+            <th>Fire</th>
+            <th>Police</th>
+            </tr>
+            <tr>
+            <td id="ems">--</td>
+            <td id="fire">--</td>
+            <td id="police">--</td>
+            </tr>
+        </table>
+        <div style="position: relative; border: 10px black;">
+            <table style="height: 85px; width: 95%;">
+                <td>
+                    <img src="aed.svg" width="20%" style="float: left;">
+                    <center>
+                    <p id="aed_distance">--</p>
+                    </center>
+                    <p id="name">--</p>
+                    <p id="location">--</p>
+                </td>
+            </table>
+        </div>
+        
 
     <div style="color: white; background-color: red; width: 50%; position: relative; left: 10px; border-radius: 5px;">
         <h1 style="position: relative; left: 5px;">First Aid</h1>
@@ -85,5 +124,5 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
 integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
 crossorigin=""></script>
-<script src="index.js"></script>
+<script src="index2.js"></script>
 </html>
